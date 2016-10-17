@@ -24,22 +24,21 @@ angular
                 templateUrl: 'views/home.html',
                 controller: 'homeCtrl'
             })
-            .state('packages', {
-                url: '/packages',
-                templateUrl: 'views/packages.html',
-                controller: 'packagesCtrl'
-            })
-             .state('contact', {
+            .state('contact', {
                 url: '/contact',
                 templateUrl: 'views/contact.html',
-                 controller: 'contactCtrl'
-             })
-             .state('hotSpot',{
+                controller: 'contactCtrl'
+            })
+            .state('hotSpot', {
                 url: '/hotSpot',
-                templateUrl: 'views/hotSpot.html',
-                controller: 'hotSpotCtrl'
-             })
+                views: {
+                    '': {
+                        templateUrl: 'views/hotSpot.html',
+                        controller: 'hotSpotCtrl'
+                    }
+                }
 
+            });
         $urlRouterProvider.otherwise('/home');
 
     });
